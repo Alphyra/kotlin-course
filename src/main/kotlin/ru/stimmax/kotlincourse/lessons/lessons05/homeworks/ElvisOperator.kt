@@ -9,7 +9,7 @@ fun main() {
 
     // example 2
     val defaultCost: Double = 50.0
-    val cost: Double? = 20.0 // но может быть null
+    val cost: Double? = 20.0  // но может быть null
     val deliveryCost = 5.0
     val insuranceCoefficient = 0.005
     // стоимость страховки
