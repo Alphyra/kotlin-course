@@ -27,7 +27,7 @@ fun main() {
     println()
 
     println("6. Создание аббревиатуры из фразы.")
-    println(makeAbbreviation("Котлин лучший язык программирования").uppercase())
+    println(makeAbbreviation("Котлин лучший язык программирования"))
     println()
 
 }
@@ -62,9 +62,9 @@ fun mask(s: String) {
 
 // 4. Форматирование адреса электронной почты.
 fun formatMail(s: String) {
-    val atFormated = s.replace("@", " [at] ")
-    val dotFormated = atFormated.replace("." , " [dot] ")
-    println(dotFormated)
+    val formated = s.replace("@", " [at] ")
+        .replace("." , " [dot] ")
+    println(formated)
 }
 
 //5. Извлечение имени файла из пути.
@@ -79,5 +79,5 @@ fun makeAbbreviation(s: String): String {
     for (word in words){
         abbreviation = abbreviation + word[0]
     }
-    return abbreviation
+    return abbreviation.uppercase()
 }
