@@ -3,10 +3,12 @@ package org.example.ru.stimmax.kotlincourse.lessons.lesson09.homeworks
 fun main(){
     //Arrays
     //1. Создайте массив из 5 целых чисел и инициализируйте его значениями от 1 до 5.
-    val a = arrayOf("1", "2", "3", "4", "5")
+    val a = arrayOf("1", "2", "3", "4", "5") //метод
 
     //2. Создайте пустой массив строк размером 10 элементов.
-    val stringArray = Array(10) {""}
+    var i = 0
+    val t = Array (10) { i++}
+    val stringArray = Array(10) {""}  //Класс
 
     //3. Создайте массив из 5 элементов типа Double и заполните его значениями, являющимися удвоенным индексом элемента.
     val doubleArray: Array<Double> = Array (5) {0.0}
@@ -26,7 +28,7 @@ fun main(){
 
     //6. Создайте массив целых чисел и скопируйте его в новый массив в цикле.
     val aFrom = arrayOf(1, 10, 20, 30)
-    val aTo: Array<Int> = Array(4) {0}
+    val aTo: Array<Int> = Array(aFrom.size) {0}
     for (i in aFrom.indices){
         aTo[i] = aFrom[i]
     }
@@ -81,8 +83,8 @@ fun main(){
 
     //Lists
     //1. Создайте пустой неизменяемый список целых чисел.
-    val l1: List<Int>
-    // val l1 = ListOf<Int>()
+    val l1: List<Int> = emptyList()
+
 
     //2. Создайте неизменяемый список строк, содержащий три элемента (например, "Hello", "World", "Kotlin").
     val l2 = listOf<String>("Hello", "World", "Kotlin")
@@ -94,6 +96,7 @@ fun main(){
     l3.add(6)
     l3.add(7)
     l3.add(8)
+    //l3.addAll(6, 7,8)
 
     //5. Имея изменяемый список строк, удалите из него определенный элемент (например, "World").
     val l5 = mutableListOf<String>("Hello", "World", "Kotlin")
@@ -156,10 +159,10 @@ fun main(){
     val set1 = setOf<Int>()
 
     //2. Создайте неизменяемое множество целых чисел, содержащее три различных элемента (например, 1, 2, 3).
-    val set2 = setOf<Int>(1, 2, 3)
+    val set2 = setOf(1, 2, 3)
 
     //3. Создайте изменяемое множество строк и инициализируйте его несколькими значениями (например, "Kotlin", "Java", "Scala").
-    val set3 = mutableSetOf<String>("Kotlin", "Java", "Scala")
+    val set3 = mutableSetOf("Kotlin", "Java", "Scala")
 
     //4. Имея изменяемое множество строк, добавьте в него новые элементы (например, "Swift", "Go").
     set3.add("Swift")
@@ -183,7 +186,7 @@ fun main(){
 
     //8. Создайте множество строк и конвертируйте его в изменяемый список строк с использованием цикла.
     println("Множества, задача 8:")
-    val set8 = setOf<String>("я", "учу", "Kotlin")
+    val set8 = setOf("я", "учу", "Kotlin")
     val l = mutableListOf<String>()
     for (ele in set8) {
         l.add(ele)
@@ -202,7 +205,10 @@ fun funForArray10(a: Array<String>, s: String) {
 fun funForSet7(set: Set<String>, s: String): Boolean {
     var res = false
     for (ele in set) {
-        if (ele == s) res = true
+        if (ele == s) {
+            res = true
+            break
+        }
     }
     return res
 }
