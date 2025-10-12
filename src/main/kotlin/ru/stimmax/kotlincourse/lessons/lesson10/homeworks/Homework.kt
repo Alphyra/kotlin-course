@@ -80,7 +80,7 @@ fun main() {
     val library = mapOf<String, List<String>>()
 
     //Справочник растений: Ключи - типы растений (например, "Цветы", "Деревья"), значения - списки названий растений
-    val plants = mapOf<String, List<String>>()
+    val plants = mutableMapOf<String, MutableList<String>>()
 
     //Четвертьфинала: Ключи - названия спортивных команд, значения - списки игроков каждой команды
     val teams = mapOf<String, MutableList<String>>()
