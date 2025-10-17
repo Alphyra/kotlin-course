@@ -1,7 +1,7 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson11.homeworks
 
 fun main(){
-
+    println(isEven(6))
 }
 
 //1. Не принимает аргументов и не возвращает значения.
@@ -58,15 +58,14 @@ fun multiplyByTwo(i: Int): Int{
 //12. Создайте функцию isEven,
 // которая принимает целое число и возвращает true, если число чётное, и false в противном случае.
 fun isEven(i: Int): Boolean{
-    if (i % 2 == 0) return true
-    else return false
+    return (i % 2 == 0)
 }
 
 //13. Напишите функцию printNumbersUntil, которая принимает целое число n и выводит на экран числа от 1 до n.
 // Если число n меньше 1, функция должна прекратить выполнение с помощью return без вывода сообщений.
 fun printNumbersUntil(n: Int) {
     if(n<1) return
-    for (i in 1..n){
+    for (i in 1 until n){
         println(i)
     }
 }
