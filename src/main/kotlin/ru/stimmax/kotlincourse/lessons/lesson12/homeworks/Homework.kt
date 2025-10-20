@@ -31,7 +31,7 @@ fun main() {
 
     //4. Взять элемент по индексу или создать значение если индекса не существует????
     println("--4--")
-    nums.getOrElse(10) {it}
+    nums.getOrElse(10) {55}
     println(nums)
 
     //5. Собрать коллекцию в строку
@@ -205,7 +205,8 @@ fun fun27(l: List<String>): String {
 
 //28. Категоризация чисел
 fun fun28(l: List<Int>): Map<String, List<Int>> {
-    return l.sortedDescending()
+    return l.distinct()
+        .sortedDescending()
         .groupBy { if (it % 2 == 0) "четные" else "нечетные"}
 }
 
