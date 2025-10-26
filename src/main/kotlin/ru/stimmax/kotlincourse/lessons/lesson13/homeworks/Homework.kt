@@ -9,6 +9,8 @@ fun main() {
     map1.forEach { time = time + it.value }
     val timeAvg = time / map1.size
 
+    map1.values.average();
+
     //2. Имеется словарь с метаданными автоматизированных тестов, где ключи — это имена тестовых методов а значения - строка с метаданными.
     //  Выведите список всех тестовых методов.
     val map2 = mapOf("qwe" to "qwe,qwe,qwe")
@@ -16,13 +18,15 @@ fun main() {
         println(it.key)
     }
 
+    println(map2.keys)
+
     //3. В изменяемый словарь с данными о прохождении тестов добавьте новый тест и его результат.
     map1["t4"] = 5.5
 
     //4. Посчитайте количество успешных тестов
     // в словаре с результатами (ключ - название, значение - результат из passed, failed, skipped).
     val map4 = mapOf("t1" to "passed")
-    map4.filter { it.value == "passed" }
+    map4.filter { it.value == "passed" }.count()
 
     //5. Удалите из изменяемого словаря с баг-трекингом запись о баге,
     // который был исправлен (ключ - название, значение - статус исправления).
@@ -50,6 +54,7 @@ fun main() {
 // получите значение для "browserType". Ответ не может быть null.
     val map9 = mapOf("browserType" to "Chrome")
     val v = map9["browserType"]
+    map9.getValue("browserType")
 
     //10. Создайте копию неизменяемого словаря с данными о версиях тестируемого ПО, добавив новую версию.
     val map10 = mapOf("po" to "1.0")
@@ -89,12 +94,12 @@ fun main() {
 
     //17. Очистите изменяемый словарь с временными данными о последнем прогоне автоматизированных тестов.
     var map17 = mutableMapOf("run 10.10.2025" to 300.05)
-    map17.remove("run 10.10.2025")
+    map17.clear()
 
     //18. Исключите из отчета по автоматизированному тестированию те случаи,
 // где тесты были пропущены (имеют статус “skipped”). Ключи - название теста, значения - статус.
     var map18 = mutableMapOf("t1" to "skipped")
-    val map18Skipped = map18.filterValues { it == "skipped" }
+    val map18Skipped = map18.filterNot { it.value == "skipped" }
     val map18Res = map18 - map18Skipped
 
     //19. Создайте копию словаря с конфигурациями тестирования удалив из него несколько конфигураций.
