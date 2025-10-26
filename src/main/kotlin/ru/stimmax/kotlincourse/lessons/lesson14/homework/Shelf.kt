@@ -1,6 +1,7 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson14.homework
 
-class Shelf (val capacity: Int, val itemList: MutableList<String>){
+class Shelf (val capacity: Int){
+    private val itemList: MutableList<String> = mutableListOf() // при создании полки предметы не указываются, поэтому выносим из конструктора
     fun addItem(itemName: String): Boolean {
         val currentState = itemList.map {
             it.length

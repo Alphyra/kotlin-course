@@ -1,6 +1,8 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson14.homework
 
-class Rack (val shelfs: MutableList<Shelf>, val maxShelfAmount: Int) {
+class Rack (val maxShelfAmount: Int) {
+    private val shelfs: MutableList<Shelf> = mutableListOf()
+
     fun addShelf(shelf: Shelf): Boolean {
         if (shelfs.contains(shelf) || shelfs.size>=maxShelfAmount) {
             return false
@@ -12,7 +14,7 @@ class Rack (val shelfs: MutableList<Shelf>, val maxShelfAmount: Int) {
 
     fun removeShelf(index: Int): List<String>? {
         val removedShelf = shelfs.removeAt(index)
-        return removedShelf.itemList
+        return removedShelf.getItems()
     }
 
     fun addItem(itemName: String): Boolean {
