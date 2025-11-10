@@ -1,19 +1,21 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson17
 
 class PlayStation (
-    val games: List<String>,
-    private val owner: String,
-    val supportPhone: String,
+    val games: MutableList<String>,
     val payed: Boolean,
-    val price: Double,
     private var pinCode: String
     ) {
     val color: String = "red"
     val model: String = "R2d2"
+    val supportPhone: String = "+79785465222"
     private var balance: Double = 0.00
     var isOn: Boolean = false
     private var osIsLoaded = false
     val gamePadExist: Boolean = true
+    private val owner: String = ""
+    var price = 10.00 // need to use var not val
+        private set // the setter is private and has the default implementation
+
 
     private fun turnOn () {
         isOn = true
