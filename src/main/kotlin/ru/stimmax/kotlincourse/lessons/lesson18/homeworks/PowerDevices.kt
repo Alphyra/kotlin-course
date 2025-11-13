@@ -1,10 +1,10 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson18.homeworks
 
-abstract class PowerDevices : Powerable {
+abstract class PowerDevices (val name : String) : Powerable {
     override fun powerOn() {
-        println("Включено")
+        println("$name Включено")
     }
     override fun powerOff() {
-        println("Выключено")
+        println("$name Выключено")
     }
 }

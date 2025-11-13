@@ -13,4 +13,6 @@ fun main() {
     val myVacuumCleaner = VacuumCleanerOne()
     myVacuumCleaner.powerOn()
     myVacuumCleaner.clean()
+
+
 }
