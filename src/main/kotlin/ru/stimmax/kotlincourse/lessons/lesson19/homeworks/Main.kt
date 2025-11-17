@@ -50,7 +50,8 @@ class PhrasesToListOfStrings : Mapper<String, List<String>> {
 // в котором ключ и значения поменялись местами.
 
 fun <T,N> transposition(m : Map<T,N>): Map<N, T> {
-    return m.map {it}.associate { it.value to it.key }
+    return m.map {it}.associate { it.value to it.key } //преобразование в список, теперь it - это map entry
+    // associate - преобразование списка в мэп
 }
 
 // 6 Напиши интерфейс Validator с дженериком с функцией валидации,
@@ -63,7 +64,9 @@ interface Validator<T> {
 // Реализуй проверку, что строка не является null, не пустая и не состоит из одних пробелов.
 class StringValidator : Validator<String?> {
     override fun validate(t: String?): Boolean {
-        return t.isNullOrEmpty()   //?
+        return t?.isNotBlank() ?: false    // ?. - проверка на null
+        // если проверка выполняется не null то выполняется проверка isNotBlank()
+        // ?: - оператор Элвиса
     }
 }
 
