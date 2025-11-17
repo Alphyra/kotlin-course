@@ -1,5 +1,7 @@
 package org.example.ru.stimmax.kotlincourse.lessons.lesson20
 
+import kotlin.math.absoluteValue
+
 class Main {
 
 //    1. Определите функцию-расширение для массива чисел, которая не принимает аргументов и
@@ -17,9 +19,9 @@ class Main {
 
 // 2. Создайте функцию-расширение для изменяемого списка элементов:
 
-fun <T : Comparable<T>> MutableList<T>.sort(direction: Boolean): List<T> {
+fun <T : Comparable<T>> MutableList<T>.sort(asc: Boolean): List<T> {
     val self = toList()
-    if (direction) {
+    if (asc) {
         sort()
     } else {
         sortDescending()
@@ -29,7 +31,29 @@ fun <T : Comparable<T>> MutableList<T>.sort(direction: Boolean): List<T> {
 
 //3
 
-fun <R> Map<R, List<R>>?.mapByIndex(index: Int): Map<String, R?>? {
-    return this?.mapKeys { it.key.toString() }
-        ?.mapValues { it.value.getOrNull(index) }
+fun <T> Map<T, List<T>>.fun3(i: Int): Map<String, T?>? {
+    return mapKeys { it.key.toString() }
+        ?.mapValues {it.value.getOrNull(i)}
+}
+
+//4
+
+fun Number.fun4(other: Number, deviation: Number) : Boolean {
+    val res = toDouble() - other.toDouble()
+    return res.absoluteValue <= deviation.toDouble()
+}
+
+//5
+
+fun String.encrypt(base: Int): String {
+    return ""
+}
+
+fun String.decrypt(base: Int): String {
+    return ""
+}
+
+
+fun main() {
+    println(5.fun4(3, 0.01))
 }
