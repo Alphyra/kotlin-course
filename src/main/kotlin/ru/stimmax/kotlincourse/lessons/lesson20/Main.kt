@@ -50,7 +50,7 @@ fun String.encrypt(base: Int): String {
 }
 
 fun String.decrypt(base: Int): String {
-    return ""
+    return "    "
 }
 
 
