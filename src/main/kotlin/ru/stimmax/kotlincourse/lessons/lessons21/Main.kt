@@ -29,7 +29,6 @@ fun Any.toSquare(): Double{
 
 //5
 fun sumIntOrDoubleValues(l: List<Any>): Double {
-    var sum = 0.0
     return l.sumOf { (it as? Int)?.toDouble() ?: (it as? Double) ?: 0.0 } // два оператора Элвиса?
 }
 
